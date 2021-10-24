@@ -1,15 +1,25 @@
+import { registerVersion } from "@firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut,
-    onAuthStateChanged } from "firebase/auth";
+    onAuthStateChanged,  createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile  } from "firebase/auth";
 import { useState,useEffect } from "react";
-import initializeAuthentication from '../firebase/firebase.init';
+import initializeAuthentication from "../firebase/firebase.init";
+import Login from "../pages/Login/Login";
 initializeAuthentication();
 const googleProvider = new GoogleAuthProvider();
 
 
 const useFirebase=()=>{
-    const [user,setUser]=useState({});
-    const [isLoading,setIsLoading]=useState(true);
     const auth = getAuth();
+    const [name,setName]=useState('');
+    const [email, setEmail]=useState('');
+    const[password, setPassword]=useState('');
+    const [user,setUser]=useState({});
+    const [isRegister,setIsRegister]=useState(false);
+    const [isLoading,setIsLoading]=useState(true);
+    
+    
+
+    // signin with google-------------------------------------
     const signInUsingGoogle=()=>{
         setIsLoading(true);
             signInWithPopup(auth, googleProvider)
@@ -26,6 +36,56 @@ const useFirebase=()=>{
             })
     }
 
+// create-user and sign-in with email and password---------------
+
+//-------creating user with email & password----------------
+const emailFieldHandler=(e)=>{
+    setEmail(e.target.value);
+}
+const passwordFieldHandler=(e)=>{
+    setPassword(e.target.value);
+}
+const handleRegistration= e =>{
+    e.preventDefault();
+    console.log(email,password);
+    isRegister? register(email,password): login(email,password)
+}
+const register=(email,password)=>{
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((result) => {
+        // Signed in 
+        const user = result.user;
+        console.log(user);
+        setUserName();
+    })
+}
+const setUserName=()=>{
+    updateProfile(auth.currentUser, {
+        displayName:name
+      }).then(() => {
+        // Profile updated!
+        // ...
+      }).catch((error) => {
+        // An error occurred
+        // ...
+      });
+}
+const login=(email,password)=>{
+    signInWithEmailAndPassword(auth, email, password)
+    .then((result) => {
+      // Signed in 
+      const user = result.user;
+      console.log(user);
+      // ...
+    })
+}
+const userNameFieldHandler=(e)=>{
+   setName(e.target.value);
+}
+//toggle to register---
+const toggleRegister=(e)=>{
+    setIsRegister(e.target.checked);
+}
     // observe user state change
     useEffect(()=>{
         const unsubscribed=onAuthStateChanged(auth, (user) => {
@@ -51,8 +111,14 @@ const useFirebase=()=>{
     }
     return{
         user,
+        isRegister,
         isLoading,
         signInUsingGoogle,
+        userNameFieldHandler,
+        emailFieldHandler,
+        passwordFieldHandler,
+        handleRegistration,
+        toggleRegister,
         logOut
     }
 }
