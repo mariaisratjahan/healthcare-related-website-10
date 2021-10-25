@@ -1,0 +1,19 @@
+.trainers{
+    text-align: center;
+    margin: 100px 0;
+}
+.trainers-heading{
+    font-size: 40px;
+}
+.trainers-image{
+    justify-content: center;
+    padding: 10px;
+    background-color: rgba(230, 191, 22, 0.226);
+}
+.trainers-image img{
+    width:200px;
+    height:200px;
+    margin: 20px;
+    border-radius:100px ;
+    border:1px solid rgb(255, 157, 0);
+}

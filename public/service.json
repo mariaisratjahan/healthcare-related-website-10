@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "name": "Body Combat",
+      "image": "https://image.shutterstock.com/image-photo/athletic-woman-fighting-stance-practicing-260nw-1972410428.jpg",
+      "details": "BODYCOMBAT™ is the empowering cardio workout where you are totally unleashed. This fiercely energetic program is inspired by martial arts and draws from a wide array of disciplines such as karate,boxing, taekwondo, tai chi and muay thai. Supported by driving music and powerful role model instructors, you strike, punch, kick and kata your way through calories to superior cardio fitness.BODYPUMP™ is the original barbell class that shapes, tones and strengthens your entire body."
+    },
+    {
+      "id": 2,
+      "name": "Yoga Fitness",
+      "image": "https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/07/01/Pictures/_d54e1ff0-7d19-11e8-98f1-ed5cda4a01f0.jpg",
+      "details": "Whether you’re a regular yoga guru or are just starting out with the basics, Practicing yoga helps provide a foundation and tools to building good habits, such as discipline, self-inquiry, and nonattachment. This exercise is also a pathway to empower you to make conscious choices to live a healthy and fulfilling life."
+    },
+    {
+      "id": 3,
+      "name": "Zumba Fitness",
+      "image": "https://img.grouponcdn.com/seocms/2AyJNdUZErWUT38rryLdNQBBrLUJ/ihs_0-116_15000_1__jpg_crop_jpeg-1080x648",
+      "details": "This is the activity that everyone’s been talking about. Fun, hypnotic and easy-to-follow, Zumba classes are the fun way to get your body moving, burn fat and invigorate your energy levels."
+    },
+    {
+      "id": 4,
+      "name": "Boxing",
+      "image": "https://static.onecms.io/wp-content/uploads/sites/35/2018/03/03204146/boxing.jpg",
+      "details": "Everyone from elite athletes to supermodels have long been touting the benefits of boxing as a complete body workout.Allowing you to develop superior upper body strength, quickness and agility, cardiovascular fitness, and improved posture all at the same time, our boxing classes are great for all ages and fitness levels. Our classes focus on specific techniques and drills."
+    },
+    {
+      "id": 5,
+      "name": "Pilates  Fitness",
+      "image": "https://assets.nhs.uk/nhsuk-cms/images/T_0318_pilates_846236630.width-320.jpg",
+      "details": "Pilates teaches a unique method of body control and conditioning – stretching and strengthening the muscles, while improving flexibility and balance. Pilates aims to achieve core stability and improve posture."
+    },
+    {
+      "id": 6,
+      "name": "Body Attack",
+      "image": "https://ymcacf.org/wp-content/uploads/2020/03/LesMills-Body-Attack-1.jpg",
+      "details": "BODYATTACK™ is a high-energy, fun and athletic workout focused on cardio fitness, stamina and agility.Combining athletic movements like running, lunging and jumping with strength exercises such as push-ups and squats, you can burn up to 730 calories* during a workout. "
+    },
+    {
+      "id": 7,
+      "name": "CrossFit",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMIxPGEZ8O9_V-oQ9r-JlVc0ongm3Tcd9EmQ&usqp=CAU",
+      "details": "CrossFit combines a series of cardiovascular exercise, body-weight strength training, gymnastics, and weightlifting into fast paced, total-body workouts. It helps to increase Stamina and Endurance Power."
+    }
+  ]

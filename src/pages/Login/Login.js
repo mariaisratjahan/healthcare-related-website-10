@@ -1,14 +1,15 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import useFirebase from './../../hooks/useFirebase';
+import useAuth from './../../hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
+import { signInWithEmailAndPassword } from '@firebase/auth';
 
 const Login = () => {   
-    const {emailFieldHandler,passwordFieldHandler,handleRegistration,toggleRegister,isRegister,userNameFieldHandler}=useFirebase();
+    const {user,emailFieldHandler,passwordFieldHandler,handleRegistration,toggleRegister,isRegister,userNameFieldHandler,signInUsingGoogle}=useAuth();
     
-    
-   
     return (
-        <div>
+        <div className="p-5 m-5">
          <h2>Please {isRegister? 'Register': 'Login'}</h2>
             <Form onSubmit={handleRegistration}>
             {
@@ -32,10 +33,16 @@ const Login = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check onChange={toggleRegister} type="checkbox" label="Not Registered Yet ?" />
             </Form.Group>
-            <Button  variant="primary" type="submit">
+            <Button variant="primary" type="submit">
                {isRegister?' Register' : 'Login'}
             </Button>
             </Form>
+            {
+                !user.email&&<div>
+                <div className="text-danger p-5">---------OR, Login Using Google------------</div>
+             <Button variant="danger" onClick={signInUsingGoogle}>Google Sign-In</Button>
+                </div>
+            }
         </div>
     );
 };

@@ -16,6 +16,7 @@ const useFirebase=()=>{
     const [user,setUser]=useState({});
     const [isRegister,setIsRegister]=useState(false);
     const [isLoading,setIsLoading]=useState(true);
+    // const [isLoading,setIsLoading]=useState(true);
     
     
 
@@ -40,9 +41,12 @@ const useFirebase=()=>{
 
 //-------creating user with email & password----------------
 const emailFieldHandler=(e)=>{
+   
     setEmail(e.target.value);
+    console.log(e.target.value);
 }
 const passwordFieldHandler=(e)=>{
+   
     setPassword(e.target.value);
 }
 const handleRegistration= e =>{
@@ -51,6 +55,7 @@ const handleRegistration= e =>{
     isRegister? register(email,password): login(email,password)
 }
 const register=(email,password)=>{
+    
     createUserWithEmailAndPassword(auth, email, password)
     .then((result) => {
         // Signed in 
@@ -58,8 +63,10 @@ const register=(email,password)=>{
         console.log(user);
         setUserName();
     })
+   
 }
 const setUserName=()=>{
+  
     updateProfile(auth.currentUser, {
         displayName:name
       }).then(() => {
@@ -71,13 +78,16 @@ const setUserName=()=>{
       });
 }
 const login=(email,password)=>{
-    signInWithEmailAndPassword(auth, email, password)
-    .then((result) => {
-      // Signed in 
-      const user = result.user;
-      console.log(user);
-      // ...
-    })
+   
+  signInWithEmailAndPassword(auth, email, password)
+  .then((result) => {
+    const user = result.user;
+    console.log(user);
+   
+   
+  })
+    
+    
 }
 const userNameFieldHandler=(e)=>{
    setName(e.target.value);
@@ -113,6 +123,9 @@ const toggleRegister=(e)=>{
         user,
         isRegister,
         isLoading,
+        email,
+        password,
+        name,
         signInUsingGoogle,
         userNameFieldHandler,
         emailFieldHandler,
