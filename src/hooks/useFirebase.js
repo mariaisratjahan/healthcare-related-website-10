@@ -63,6 +63,10 @@ const register=(email,password)=>{
         const user = result.user;
         console.log(user);
         setUserName();
+        setError('')
+    })
+    .catch(error =>{
+        setError(error.message)
     })
    
 }
