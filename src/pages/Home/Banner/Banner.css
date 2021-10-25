@@ -22,6 +22,7 @@
 .carousel {
     width:100%;    
     margin: auto;
+    margin-top: -40px;
   }
   .item:after {
     content:"";
