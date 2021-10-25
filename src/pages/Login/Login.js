@@ -6,7 +6,7 @@ import { useHistory, useLocation } from 'react-router';
 import { signInWithEmailAndPassword } from '@firebase/auth';
 
 const Login = () => {   
-    const {user,emailFieldHandler,passwordFieldHandler,handleRegistration,toggleRegister,isRegister,userNameFieldHandler,signInUsingGoogle}=useAuth();
+    const {user,emailFieldHandler,passwordFieldHandler,handleRegistration,toggleRegister,isRegister,userNameFieldHandler,signInUsingGoogle,error}=useAuth();
     
     return (
         <div className="p-5 m-5">
@@ -33,6 +33,7 @@ const Login = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check onChange={toggleRegister} type="checkbox" label="Not Registered Yet ?" />
             </Form.Group>
+             <h6 className="text-danger">{error}</h6>
             <Button variant="primary" type="submit">
                {isRegister?' Register' : 'Login'}
             </Button>

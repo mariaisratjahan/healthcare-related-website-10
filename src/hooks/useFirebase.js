@@ -16,6 +16,7 @@ const useFirebase=()=>{
     const [user,setUser]=useState({});
     const [isRegister,setIsRegister]=useState(false);
     const [isLoading,setIsLoading]=useState(true);
+    const [error, setError]=useState('');
     // const [isLoading,setIsLoading]=useState(true);
     
     
@@ -83,8 +84,11 @@ const login=(email,password)=>{
   .then((result) => {
     const user = result.user;
     console.log(user);
+    setError('');   
    
-   
+  })
+  .catch(error =>{
+    setError(error.message)
   })
     
     
@@ -132,7 +136,8 @@ const toggleRegister=(e)=>{
         passwordFieldHandler,
         handleRegistration,
         toggleRegister,
-        logOut
+        logOut,
+        error
     }
 }
 
